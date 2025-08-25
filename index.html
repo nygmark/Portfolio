@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mark James Nanquil — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Mark James Nanquil — Frontend developer focused on clean UI, HTML/CSS/JS.">
+  <meta name="theme-color" content="#ffb6b9">
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Mark James Nanquil",
+    "alternateName":"@fleurrboii",
+    "jobTitle":"Frontend Developer",
+    "url":"https://your-site.example.com",
+    "sameAs":[
+      "https://github.com/nygmark",
+      "https://www.facebook.com/mmarkkjamess",
+      "https://www.instagram.com/fleurrboii"
+    ],
+    "email":"mailto:markjamesnanquil64@gmail.com"
+  }
+  </script>
+</head>
+<body>
+  <!-- Decorative blobs -->
+  <svg class="bg-blob blob-1" viewBox="0 0 600 600" aria-hidden="true">
+    <g transform="translate(300,300)">
+      <path d="M120,-160C167,-113,200,-67,201,-17C202,33,171,82,129,127C86,172,34,212,-14,205C-62,197,-112,142,-145,92C-178,42,-193,-3,-173,-49C-154,-95,-100,-142,-47,-174C6,-206,58,-222,120,-160Z" fill="#ffb6b933"></path>
+    </g>
+  </svg>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <h1 class="brand">My Profile</h1>
+      <div class="header-actions">
+        <a class="btn btn-resume" href="/resume.pdf" download aria-label="Download resume">Resume</a>
+        <button id="themeToggle" class="toggle-btn" aria-pressed="false">Dark Mode</button>
+        <button id="openHire" class="btn btn-hire" aria-haspopup="dialog">Hire me</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="content" role="main">
+    <section class="top-section reveal" id="about" aria-labelledby="about-heading">
+      <aside class="profile card" aria-label="Profile">
+        <img src="/img/mj.jpg" alt="Mark James Nanquil — profile photo" loading="lazy">
+        <h2 class="handle">@fleurrboii</h2>
+        <h3 class="name">Mark James Nanquil</h3>
+        <p class="headline" aria-live="polite"></p> <!-- Typewriter target -->
+        <p class="elevator">I build clear, responsive user interfaces and small web apps that solve user problems and ship fast.</p>
+
+        <div class="stats" role="list" aria-label="Quick stats">
+          <div class="stat" role="listitem"><b>3</b><span>Posts</span></div>
+          <div class="stat" role="listitem"><b>—</b><span>Followers</span></div>
+          <div class="stat" role="listitem"><b>1</b><span>Following</span></div>
+        </div>
+
+        <div class="highlights" aria-hidden="false">
+          <span class="highlight">HTML</span>
+          <span class="highlight">CSS</span>
+          <span class="highlight">JS</span>
+          <span class="highlight">UI</span>
+        </div>
+
+        <nav class="social" aria-label="Social links">
+          <a href="mailto:markjamesnanquil64@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.facebook.com/mmarkkjamess" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/fleurrboii?igsh=eTd5MTAyaHgyZmV2" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/nygmark" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </nav>
+      </aside>
+
+<article class="bio card" id="about-heading">
+  <h2>About Me</h2>
+  <p>
+    I’m a junior Frontend Developer focused on creating clean, responsive, and accessible user interfaces using HTML, CSS and JavaScript. I enjoy turning UX ideas into small, polished web apps — for example, I built <a href="https://nygmark.github.io/ReviewHub/" target="_blank" rel="noopener">ReviewHub</a>, a lightweight reviews app that demonstrates form validation, client‑side persistence, and responsive layouts. I prioritize usability, fast iteration, and maintainable code, and I’ve completed web development certifications and hands‑on projects to strengthen my foundation.
+  </p>
+
+  <h3>Internship focus</h3>
+  <p>
+    I’m seeking a frontend internship where I can learn component‑driven development, accessibility best practices, and contribute to product features on a collaborative team.
+  </p>
+
+  <ul class="quick-facts">
+    <li><strong>Role seeking:</strong> Junior Frontend / UI Developer (internships welcome)</li>
+    <li><strong>Primary stack:</strong> HTML, CSS, JavaScript, responsive design</li>
+    <li><strong>Location:</strong> Philippines (UTC+8) — remote friendly</li>
+    <li><strong>Preferred contact:</strong> Email — markjamesnanquil64@gmail.com</li>
+  </ul>
+
+  <p class="cta"><strong>Interested in collaborating?</strong> Email me at <a href="mailto:markjamesnanquil64@gmail.com">markjamesnanquil64@gmail.com</a> or click <button class="btn btn-hire" id="openHireInline">Hire me</button> to send a quick message.</p>
+</article>
+
+    </section>
+
+    <section class="skills-section reveal" id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <label>HTML</label>
+          <div class="bar" aria-hidden="true"><span data-width="90%"></span></div>
+        </div>
+        <div class="skill">
+          <label>CSS</label>
+          <div class="bar" aria-hidden="true"><span data-width="85%"></span></div>
+        </div>
+        <div class="skill">
+          <label>JavaScript</label>
+          <div class="bar" aria-hidden="true"><span data-width="72%"></span></div>
+        </div>
+        <div class="skill">
+          <label>UI / Prototyping</label>
+          <div class="bar" aria-hidden="true"><span data-width="75%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section reveal" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured — Case Study</h2>
+      <div class="case-study card">
+        <div class="case-media">
+          <img src="/img/proj.png" alt="ReviewHub project screenshot" loading="lazy">
+        </div>
+        <div class="case-body">
+          <h3>ReviewHub — small review app</h3>
+          <p class="muted">
+            Problem: Users needed a simple way to collect short reviews for local businesses.
+          </p>
+          <p>
+            Approach: Built a lightweight, accessible UI with vanilla JavaScript, localStorage for persistence, and responsive layout. Focused on fast, clear interactions and form validation.
+          </p>
+          <p class="impact"><strong>Impact:</strong> Demonstrated ability to ship a usable UI quickly; reusable components for future projects.</p>
+          <div class="case-actions">
+            <a class="btn" href="https://nygmark.github.io/ReviewHub/" target="_blank" rel="noopener">View Live</a>
+            <a class="btn" href="https://github.com/nygmark/ReviewHub" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section reveal" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Others</h2>
+      <div class="gallery">
+        <article class="post" tabindex="0">
+          <a href="/skills/skills.html" target="_blank" rel="noopener">
+            <img src="/img/skills.png" alt="Skills page screenshot" loading="lazy">
+            <div class="overlay">
+              <h3>Skills Showcase</h3>
+              <p>Responsive skills page using semantic HTML and modern CSS.</p>
+              <div class="tags"><span>HTML</span><span>CSS</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="post" tabindex="0">
+          <a href="/cert/certifications.html" target="_blank" rel="noopener">
+            <img src="/img/cert.png" alt="Certifications screenshot" loading="lazy">
+            <div class="overlay">
+              <h3>Certifications</h3>
+              <p>Catalog of certificates and courses I completed to improve my skills.</p>
+              <div class="tags"><span>Profile</span><span>Learning</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="post" tabindex="0">
+          <a href="https://nygmark.github.io/ReviewHub/" target="_blank" rel="noopener">
+            <img src="/img/proj.png" alt="ReviewHub project screenshot" loading="lazy">
+            <div class="overlay">
+              <h3>ReviewHub</h3>
+              <p>A small web app for collecting and displaying short reviews.</p>
+              <div class="tags"><span>JavaScript</span><span>UI</span></div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials reveal" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading">Testimonials</h2>
+      <div class="test-grid">
+        <blockquote class="testimonial card">
+          <p>"Mark is curious and quick to learn. Their UI work is thoughtful and easy to use."</p>
+          <br />
+          <p>— Teacher / Mentor</p>
+        </blockquote>
+
+        <blockquote class="testimonial card">
+          <p>"Delivered a clean interface and iterated quickly based on feedback."</p>
+          <br />
+          <p>— Project Collaborator</p>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2025 Nanquil — <a href="/resume.pdf" style="color: white;" download>Resume</a></p>
+    <a class="sticky-contact" href="mailto:markjamesnanquil64@gmail.com" aria-label="Contact">Email</a>
+  </footer>
+
+  <!-- Hire modal -->
+  <div class="modal-backdrop" id="hireModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="hireTitle">
+    <div class="modal" role="document">
+      <button class="modal-close" id="closeHire" aria-label="Close dialog">&times;</button>
+      <h2 id="hireTitle">Hire me</h2>
+      <p>Send a quick message — I’ll reply via email.</p>
+
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="from_name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="reply_to" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Short description of the role or task"></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <a class="btn btn-mailto" href="mailto:markjamesnanquil64@gmail.com">Or open email</a>
+        </div>
+
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
