@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Certifications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-light: #fffaf0;
+      --bg-dark: #2c2c2c;
+      --card-light: #fff;
+      --card-dark: #3b3b3b;
+      --text-light: #333;
+      --text-dark: #eee;
+      --accent: #ffb6b9;
+      --secondary: #cdb4db;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: 0.3s ease;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--accent);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .toggle-btn {
+      background: white;
+      color: var(--accent);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cert-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cert-section h2 {
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+
+    .cert-card {
+      background: var(--card-light);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: 0.3s ease;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    body.dark .cert-card {
+      background: var(--card-dark);
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .cert-card .cert-info {
+      padding: 1rem;
+    }
+
+    .cert-card h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .cert-card a:hover {
+      background: var(--secondary);
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .back-btn:hover {
+      background: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--accent);
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+<h2>My Certifications</h2>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  </header>
+
+  <section class="cert-section">
+    <h2>Achievements & Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="/cert/imgcert/cisco.jpeg" alt="Certificate 1">
+        <div class="cert-info">
+          <h3>IT Essentials - CISCO</h3>
+        
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="/cert/imgcert/dict.png" alt="Certificate 2">
+        <div class="cert-info">
+          <h3>Laravel Fundamentals - DICT Region IV-A</h3>
+         
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="/cert/imgcert/dir.jpeg">
+        <div class="cert-info">
+          <h3>Best Director - GNED 05</h3>
+         
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Back to Homepage Button -->
+    <div>
+      <a href="/index.html" class="back-btn">← Back to Homepage</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nanquil</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
