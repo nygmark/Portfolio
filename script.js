@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (function typewriter(){
     const el = document.querySelector('.headline');
     if (!el) return;
-    const words = ['Frontend Developer', 'UI-focused', 'Open to work'];
+    const words = ['Frontend Developer', 'UI-focused', 'Open to work', 'I love my girlfriend'];
     let wi = 0, si = 0, isDeleting = false;
     function tick(){
       const full = words[wi];
@@ -85,24 +85,67 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // Animate skill bars when skills section is visible
-  const skillSpans = document.querySelectorAll('.bar span');
-  const skillsSection = document.querySelector('.skills-section');
-  if (skillSpans.length) {
-    function animateSkills() {
-      skillSpans.forEach(s => {
-        const w = s.datasetWidth || '70%';
-        s.style.width = w;
-      });
+  // Skill bars: read data-width from the span or parent .bar and react to attribute changes
+const skillSpans = document.querySelectorAll('.bar span');
+const skillsSection = document.querySelector('.skills-section');
+
+if (skillSpans.length) {
+  // helper: compute & apply width for a single span
+  function applyWidthToSpan(s) {
+    // Prefer span's data-width, fallback to parent .bar's data-width
+    let w = s.getAttribute('data-width') || s.dataset.width;
+    if (!w) {
+      const parent = s.closest('.bar');
+      w = parent ? (parent.getAttribute('data-width') || parent.dataset.width) : null;
     }
-    if (!prefersReduced && 'IntersectionObserver' in window && skillsSection) {
-      const obs = new IntersectionObserver((entries, o) => {
-        entries.forEach(e => { if (e.isIntersecting) { animateSkills(); o.disconnect(); } });
-      }, {threshold: 0.3});
-      obs.observe(skillsSection);
-    } else {
-      animateSkills();
-    }
+    if (!w) w = '70%'; // default
+    // accept "85" or "85%" formats
+    if (!/%$/.test(w)) w = w + '%';
+    s.style.width = w;
   }
+  
+  // animate all skill spans
+  function animateSkills() {
+    skillSpans.forEach(applyWidthToSpan);
+  }
+  
+  // Observe attribute changes so editing data-width in DevTools updates live
+  const mo = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'attributes' && m.attributeName === 'data-width') {
+        const target = m.target;
+        if (target.tagName && target.tagName.toLowerCase() === 'span') {
+          applyWidthToSpan(target);
+        } else {
+          // if parent .bar changed, update child span(s)
+          target.querySelectorAll && target.querySelectorAll('span').forEach(s => applyWidthToSpan(s));
+        }
+      }
+    }
+  });
+  
+  skillSpans.forEach(s => {
+    // observe changes on the span itself and its .bar parent
+    mo.observe(s, { attributes: true });
+    const parent = s.closest('.bar');
+    if (parent) mo.observe(parent, { attributes: true });
+  });
+  
+  // trigger animation when skills section enters viewport (or immediately)
+  if (!prefersReduced && 'IntersectionObserver' in window && skillsSection) {
+    const obs = new IntersectionObserver((entries, o) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateSkills();
+          o.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(skillsSection);
+  } else {
+    animateSkills();
+  }
+}
 
   // Project card keyboard focus: show overlay on focus
   document.querySelectorAll('.post').forEach(p => {
